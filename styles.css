@@ -15,7 +15,7 @@ body {
 
 #content-grid {
 	display: grid;
-	grid-template-rows: 150px 130px 200px 50px;
+	grid-template-rows: 170px 100px 150px 100px;
 	grid-row-gap: 20px;
 }
 
@@ -32,12 +32,34 @@ body {
 }
 
 #lKeyboard {
-	background-color: #97ada9;
+	display: grid;
+	grid-template-columns: repeat(10, 30px);
+	grid-gap: 5px;
+	color: #00bd00;
+	align-items: center;
+
+}
+
+#lKeyboard > * {
+	border: 1px solid #00bd00;
+	height: 30px;
+	line-height: 30px;
 }
 
 #gMenu {
-	background-color: #979bad;
+	color: #00bd00;
+	display: flex;
 }
+
+#gMenu > button {
+	height: 40px;
+	color: #00bd00;
+	outline: none;
+	background: black;
+	border: 1px solid #00bd00;
+	margin-right: 20px;
+}
+
 
 #letterBox {
 	height: 30px;
