@@ -6,7 +6,7 @@ body {
 	background-color: black;
 	text-align: center;
 	font-family: 'Roboto', sans-serif;
-	font-weight: 300;
+	font-weight: 500;
 }
 
 /*section {
@@ -15,23 +15,35 @@ body {
 
 #content-grid {
 	display: grid;
-	grid-template-rows: 150px 150px 200px 50px;
+	grid-template-rows: 150px 130px 200px 50px;
 	grid-row-gap: 20px;
 }
 
-#hGraphic{
+#hGraphic {
 	background-color: black;
 }
 
-#wDisplay{
-	background-color: #ada997;
+#wDisplay {
+	display: flex;
+	justify-content: center;
+
+	align-items: center;
+	font-size: 25px;
 }
 
-#lKeyboard{
+#lKeyboard {
 	background-color: #97ada9;
 }
 
-#gMenu{
+#gMenu {
 	background-color: #979bad;
+}
+
+#letterBox {
+	height: 30px;
+	line-height: 30px;
+	width: 25px;
+	background-color: #00bd00;
+	margin: 2px;
 }
 
