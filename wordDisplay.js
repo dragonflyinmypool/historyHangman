@@ -1,17 +1,16 @@
 
 
-var wDisplay = document.getElementById('wDisplay');
+function displayWord(word) {
 
-wDisplay.innerHTML = `
-	<div id='letterBox'>A</div>
-	<div id='letterBox'>L</div>
-	<div id='letterBox'>B</div>
-	<div id='letterBox'>A</div>
-	<div id='letterBox'>N</div>
-	<div id='letterBox'>I</div>
-	<div id='letterBox'>A</div>
-	<div id='letterBox'>N</div>
-	<div id='letterBox'>I</div>
-	<div id='letterBox'>A</div>
-	<div id='letterBox'>S</div>
-`;
+	wordArray = word.split('');
+	var wDisplay = document.getElementById('wDisplay');
+	let wordBlock = '';
+	
+	for (var i = 0; i < word.length; i++) {
+		
+		wordBlock = wordBlock + '<div id="letterBox">'+ wordArray[i] + '</div>'
+		wDisplay.innerHTML = wordBlock;
+	}
+
+
+}
