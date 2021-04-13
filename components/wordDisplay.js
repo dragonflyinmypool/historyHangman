@@ -20,3 +20,21 @@ function displayWord(word, pickedLetters) {
 	}
 
 }
+
+
+
+// CSS
+
+var styles = `
+	#wDisplay {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		font-size: 25px;
+	}
+`
+
+var styleSheet = document.createElement("style")
+styleSheet.type = "text/css"
+styleSheet.innerText = styles
+document.head.appendChild(styleSheet)

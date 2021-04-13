@@ -4,7 +4,6 @@ var canvas = document.getElementById('hangmanAnimation');
 var ctx = canvas.getContext("2d");
 
 draw(0)
-draw(1)
 
 function draw(step) {
 
@@ -85,3 +84,17 @@ function draw(step) {
 	}
 
 }
+
+// Your CSS as text
+var styles = `
+   
+	#hGraphic {
+		background-color: black;
+	}
+
+`
+
+var styleSheet = document.createElement("style")
+styleSheet.type = "text/css"
+styleSheet.innerText = styles
+document.head.appendChild(styleSheet)

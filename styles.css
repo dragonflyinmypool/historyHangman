@@ -9,75 +9,9 @@ body {
 	font-weight: 500;
 }
 
-/*section {
-	border: 1px solid;
-}*/
-
 #content-grid {
 	display: grid;
 	grid-template-rows: 150px 80px 270px 40px;
 	grid-row-gap: 20px;
 }
 
-#hGraphic {
-	background-color: black;
-}
-
-#wDisplay {
-	display: flex;
-	justify-content: center;
-
-	align-items: center;
-	font-size: 25px;
-}
-
-#lKeyboard {
-	display: grid;
-	grid-template-columns: repeat(6, 40px);
-	grid-gap: 16px;
-	color: #00bd00;
-	align-items: center;
-	justify-content: center;
-
-}
-
-#lKeyboard > * {
-	border: 1px solid #00bd00;
-	height: 40px;
-	font-size: 25px;
-	line-height: 40px;
-	border-radius: 8px;
-	font-weight: 300;
-}
-
-#gMenu {
-	color: #00bd00;
-	display: flex;
-}
-
-#gMenu > button {
-	height: 40px;
-	color: #00bd00;
-	outline: none;
-	background: black;
-	margin-right: 2px;
-	margin-left: 12px;
-	border-radius: 8px;
-	
-	border: 1px solid #00bd00;
-
-}
-
-
-#letterBox {
-	height: 30px;
-	line-height: 30px;
-	width: 25px;
-	background-color: #00bd00;
-	margin: 2px;
-}
-
-.disabledButton {
-	color: rgb(100,100,100); 
-	border: 1px solid rgb(100,100,100) !important;
-}
