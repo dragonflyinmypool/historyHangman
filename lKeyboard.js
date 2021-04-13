@@ -1,16 +1,34 @@
 
-var lKeyboard = document.getElementById('lKeyboard');
 
-let letters = 'abcdefghijklmnopqrstuvwxyz'.toUpperCase()
-let letterArray = letters.split('')
- 
-const keys = letterArray.map(x => '<div>' + x +'</div>')
+function displayKeyboard(omitLetters) {
 
-let keys2 =''
+	var lKeyboard = document.getElementById('lKeyboard');
 
-for (var i = 0; i < keys.length ; i++) {
-	keys2 = keys2 + keys[i]
+	let letterArray = 'abcdefghijklmnopqrstuvwxyz'.toUpperCase().split('')
+
+	
+	function addHtml(e) {
+		
+		let onclick = `onclick=buttonClicked('${e}')`;
+
+
+		if (omitLetters.includes(e)) {
+			onclick = 'class="disabledButton"'
+		}
+
+		let a = `<div id='${e}' ${onclick} > ${e} </div>`
+
+		return a 
+	}
+
+	const keys = letterArray.map(addHtml)
+
+	let keys2 =''
+
+	for (var i = 0; i < keys.length ; i++) {
+		keys2 = keys2 + keys[i]
 
 }
 
-lKeyboard.innerHTML = keys2;
+	lKeyboard.innerHTML = keys2;
+}

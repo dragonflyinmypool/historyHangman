@@ -2,5 +2,5 @@
 
 var gMenu = document.getElementById('gMenu');
 
-gMenu.innerHTML = '<button>NEW GAME</button> <button>SHOW ANSWER</button>';
+gMenu.innerHTML = '<button onclick="startNewGame()">NEW GAME</button> <button onclick="showAnswer()">SHOW ANSWER</button>';
 
