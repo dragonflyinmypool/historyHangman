@@ -6,14 +6,21 @@ const cWords = words.map( n => n.toUpperCase())
 
 // Game settings
 let lives = 5;
-let pickedLetters = [];
 let wordArray1 = [];
+let pickedLetters = [];
 let pickedLetters2 = [];
 
 // *** Start the game ***
 function startNewGame() {
 
+	// Reset settings
+	lives = 5
+	pickedLetters = []
+ 	pickedLetters2 = []
+
+	// Set up keyboard
 	displayKeyboard('')
+
 	// Get random word
 	let word = cWords[Math.floor(Math.random() * words.length)]
 
