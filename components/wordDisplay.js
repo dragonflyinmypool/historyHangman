@@ -1,6 +1,6 @@
 
 
-function displayWord(word, pickedLetters) {
+function displayWord(word, visibleLettersInDisplay) {
 
 	let wordArray = word.split('');
 	var wDisplay = document.getElementById('wDisplay');
@@ -10,7 +10,7 @@ function displayWord(word, pickedLetters) {
 		
 		let letter = '';
 
-		if (pickedLetters[i]) {
+		if (visibleLettersInDisplay[i]) {
 			letter = wordArray[i]
 		}
 
@@ -19,22 +19,23 @@ function displayWord(word, pickedLetters) {
 
 	}
 
+	// CSS
+
+	var styles = `
+		#wDisplay {
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			font-size: 25px;
+		}
+	`
+
+	var styleSheet = document.createElement("style")
+	styleSheet.type = "text/css"
+	styleSheet.innerText = styles
+	document.head.appendChild(styleSheet)
+
 }
 
 
 
-// CSS
-
-var styles = `
-	#wDisplay {
-		display: flex;
-		justify-content: center;
-		align-items: center;
-		font-size: 25px;
-	}
-`
-
-var styleSheet = document.createElement("style")
-styleSheet.type = "text/css"
-styleSheet.innerText = styles
-document.head.appendChild(styleSheet)

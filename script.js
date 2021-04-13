@@ -1,45 +1,49 @@
 
 
 // Words
-const words = ['Lincoln', 'Einstein', 'Washington'];
-const cWords = words.map( n => n.toUpperCase())
+const wordList = ['Lincoln', 'Einstein', 'Washington'];
+const capitalizedWordList = wordList.map( n => n.toUpperCase())
 
 // Game settings
-let lives = 5;
-let wordArray1 = [];
-let pickedLetters = [];
-let pickedLetters2 = [];
+var settings = {
+	lives: 5,	
+}
+
+let chosenKeyboardCharacters = [];
+let visibleLettersInDisplay = [];
 
 // *** Start the game ***
 function startNewGame() {
 
-	// Reset settings
-	lives = 5
-	pickedLetters = []
- 	pickedLetters2 = []
+	// Reset lives
+	settings.lives = 5
+	// Reset chosen characters
+ 	chosenKeyboardCharacters = []
+ 	// Get random word
+	let currentWord = capitalizedWordList[Math.floor(Math.random() * capitalizedWordList.length)]
+	// Reset visible letters
+	visibleLettersInDisplay = currentWord.split('').map( n => 0);
 
-	// Set up keyboard
-	displayKeyboard('')
+	// Start animation
+	hangmanAnimation()
+	// Start keyboard
+	displayKeyboard(chosenKeyboardCharacters)
+	// Start game menu
+	gameMenu()
 
-	// Get random word
-	let word = cWords[Math.floor(Math.random() * words.length)]
-
-	// Set pick letters tracker
-	wordArray1 = word.split('');
-	pickedLetters = wordArray1.map( n => 0);
-
+	
+	
 	// Send word to display
-	displayWord(word, pickedLetters);
-
+	displayWord(currentWord, visibleLettersInDisplay);
 }
 
 
 // Letter clicked
 function buttonClicked(e) {
 
-	pickedLetters2.push(e)
+	chosenKeyboardCharacters.push(e)
 	// Disable letter from keyboard
-	displayKeyboard(pickedLetters2)
+	displayKeyboard(chosenKeyboardCharacters)
 
 	// Check if letter is in the word
 	

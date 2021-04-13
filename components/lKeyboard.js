@@ -1,6 +1,6 @@
 
 
-function displayKeyboard(omitLetters) {
+function displayKeyboard(characterWhichHaveBeenChosen) {
 
 	var lKeyboard = document.getElementById('lKeyboard');
 
@@ -11,7 +11,7 @@ function displayKeyboard(omitLetters) {
 		
 		let onclick = `onclick=buttonClicked('${e}')`;		
 
-		if (omitLetters.includes(e)) {
+		if (characterWhichHaveBeenChosen.includes(e)) {
 			onclick = 'class="disabledButton"'
 		}
 
