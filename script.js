@@ -7,7 +7,8 @@ const cWords = words.map( n => n.toUpperCase())
 // Game settings
 let lives = 5;
 let pickedLetters = [];
-let wordArray1 = []
+let wordArray1 = [];
+let pickedLetters2 = [];
 
 // *** Start the game ***
 function startNewGame() {
@@ -29,9 +30,10 @@ function startNewGame() {
 // Letter clicked
 function buttonClicked(e) {
 
+	pickedLetters2.push(e)
 	// Disable letter from keyboard
-	displayKeyboard(pickedLetters)
-	
+	displayKeyboard(pickedLetters2)
+
 	// Check if letter is in the word
 	
 		// If yes => 

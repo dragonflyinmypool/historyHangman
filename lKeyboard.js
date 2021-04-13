@@ -9,8 +9,7 @@ function displayKeyboard(omitLetters) {
 	
 	function addHtml(e) {
 		
-		let onclick = `onclick=buttonClicked('${e}')`;
-
+		let onclick = `onclick=buttonClicked('${e}')`;		
 
 		if (omitLetters.includes(e)) {
 			onclick = 'class="disabledButton"'
