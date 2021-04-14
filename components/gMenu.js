@@ -2,7 +2,7 @@ function gameMenu() {
 	
 	var gMenu = document.getElementById('gMenu');
 
-	gMenu.innerHTML = '<button onclick="startNewGame()">NEW GAME</button> <button onclick="showAnswer()">SHOW ANSWER</button>';
+	gMenu.innerHTML = '<button onclick="startNewGame()">NEW GAME</button> <button onclick="gameOver()">SHOW ANSWER</button>';
 
 
 	// CSS

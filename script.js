@@ -36,47 +36,57 @@ function startNewGame() {
 	displayWord(currentWord, visibleLettersInDisplay);
 }
 
-
 // Letter clicked
 function buttonClicked(letter) {
 
+	// Updated key board
 	chosenKeyboardCharacters.push(letter)
-	// Disable letter from keyboard
 	displayKeyboard(chosenKeyboardCharacters)
 
-	console.log(currentWord)
 
-	// Check if {letter} is in the {currentWord}, and check for the position of {letter} in {currentWord}
+	// Check if {letter} is in the {currentWord}
 	var indexes = [], i;
 	for (i = 0; i < currentWord.length; i++) {
 		if (currentWord[i] === letter)
 			indexes.push(i);	
 	}
-
-	console.log(indexes[0])
-	// If letter is found, do the following:
+	
+	// If letter is found:
 	if (indexes[0] > -1) {
-		// Update word display
-		console.log('You found the correct letter!')
-		
+
+		// Update {visibleLettersInDisplay}	
 		for (var i = 0; i < indexes.length; i++) {
 			visibleLettersInDisplay[indexes[i]] = 1
 		}
+		// Send updated {visibleLettersInDisplay} to {displayWord}
 		displayWord(currentWord, visibleLettersInDisplay);
-		
+	
+	// If letter is not found:	
 	} else {
+		// Take one life away and update {hangmanAnimation}
 		settings.lives = settings.lives - 1;
-
-		console.log(settings.lives)
 		hangmanAnimation(settings.lives)
-		console.log('Wrong letter!')
-
+		if(settings.lives == 0) {
+			gameOver();
+		}
 	}
-
 }
 
-function showAnswer() {
-	console.log('Show the answer')
+// Game over
+function gameOver() {
+	console.log('The game is over')
+	// Play lost sound
+	
+	// Disable all keys
+	displayKeyboard('abcdefghijklmnopqrstuvwxyz'.toUpperCase().split(''))
+
+	// Show answer
+	for (var i = 0; i < visibleLettersInDisplay.length; i++) {
+		visibleLettersInDisplay[i] = 1
+	}
+
+	displayWord(currentWord, visibleLettersInDisplay);
+	// Start new game after 5 seconds
 }
 
 startNewGame()
