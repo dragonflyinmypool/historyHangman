@@ -15,8 +15,6 @@ let currentWord = '';
 
 // *** Start the game ***
 function startNewGame() {
-
-
 	
 
 
@@ -44,12 +42,6 @@ function startNewGame() {
 function buttonClicked(letter) {
 
 
-	var sound = new Howl({
-	  		src: ['./sounds/keyClickedSound.mp3']
-		});
-
-	sound.play();
-
 	// Updated key board
 	chosenKeyboardCharacters.push(letter)
 	displayKeyboard(chosenKeyboardCharacters)
@@ -65,6 +57,9 @@ function buttonClicked(letter) {
 	// If letter is found:
 	if (indexes[0] > -1) {
 
+		//Play {correctLetter} sound
+		playSound(correctLetter)
+
 		// Update {visibleLettersInDisplay}	
 		for (var i = 0; i < indexes.length; i++) {
 			visibleLettersInDisplay[indexes[i]] = 1
@@ -74,6 +69,10 @@ function buttonClicked(letter) {
 	
 	// If letter is not found:	
 	} else {
+
+		//Play {wrongLetter} sound
+		playSound(wrongLetter)
+
 		// Take one life away and update {hangmanAnimation}
 		settings.lives = settings.lives - 1;
 		hangmanAnimation(settings.lives)
@@ -86,8 +85,9 @@ function buttonClicked(letter) {
 // Game over
 function gameOver() {
 	console.log('The game is over')
-	// Play lost sound
-	
+
+	//Play {gameOverSound} sound
+	playSound(gameOverSound)
 	// Disable all keys
 	displayKeyboard('abcdefghijklmnopqrstuvwxyz'.toUpperCase().split(''))
 
