@@ -1,7 +1,7 @@
 
 
 // Words
-const wordList = ['Lincoln', 'Einstein', 'Washington'];
+const wordList = [ 'baby'];
 const capitalizedWordList = wordList.map( n => n.toUpperCase())
 
 // Game settings
@@ -16,8 +16,6 @@ let currentWord = '';
 // *** Start the game ***
 function startNewGame() {
 	
-
-
 	// Reset lives
 	settings.lives = 7
 	// Reset chosen characters
@@ -57,8 +55,7 @@ function buttonClicked(letter) {
 	// If letter is found:
 	if (indexes[0] > -1) {
 
-		//Play {correctLetter} sound
-		playSound(correctLetter)
+		
 
 		// Update {visibleLettersInDisplay}	
 		for (var i = 0; i < indexes.length; i++) {
@@ -67,6 +64,8 @@ function buttonClicked(letter) {
 		// Send updated {visibleLettersInDisplay} to {displayWord}
 		displayWord(currentWord, visibleLettersInDisplay);
 	
+
+		checkForWin();	
 	// If letter is not found:	
 	} else {
 
@@ -98,6 +97,24 @@ function gameOver() {
 
 	displayWord(currentWord, visibleLettersInDisplay);
 	// Start new game after 5 seconds
+}
+
+function checkForWin(){
+	if (visibleLettersInDisplay.includes(0) == false) {
+		gameWon()
+	} else {			
+		//Play {correctLetter} sound
+		playSound(correctLetter)
+	}
+}
+	
+
+function gameWon () {
+	console.log('You won')
+	// Disable all keys
+	displayKeyboard('abcdefghijklmnopqrstuvwxyz'.toUpperCase().split(''))
+	playSound(solved)
+
 }
 
 startNewGame()
