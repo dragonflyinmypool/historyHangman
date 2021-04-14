@@ -16,6 +16,10 @@ let currentWord = '';
 // *** Start the game ***
 function startNewGame() {
 
+
+	
+
+
 	// Reset lives
 	settings.lives = 7
 	// Reset chosen characters
@@ -38,6 +42,13 @@ function startNewGame() {
 
 // Letter clicked
 function buttonClicked(letter) {
+
+
+	var sound = new Howl({
+	  		src: ['./sounds/keyClickedSound.mp3']
+		});
+
+	sound.play();
 
 	// Updated key board
 	chosenKeyboardCharacters.push(letter)
