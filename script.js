@@ -2,11 +2,13 @@
 
 // Words
 const wordList = [ 'baby'];
+const catagories = ['countries', 'wars', 'rivers']
 const capitalizedWordList = wordList.map( n => n.toUpperCase())
 
 // Game settings
 var settings = {
-	lives: 7	
+	lives: 7,
+	catagory: 'Presidents',
 }
 
 let chosenKeyboardCharacters = [];
@@ -33,7 +35,7 @@ function startNewGame() {
 	// Reset keyboard
 	displayKeyboard(chosenKeyboardCharacters)
 	// Reset game menu
-	gameMenu()	
+	gameMenu(catagories, settings.catagory)	
 }
 
 // Letter clicked

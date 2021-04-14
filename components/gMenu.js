@@ -1,14 +1,21 @@
-function gameMenu() {
+function gameMenu(catagories, currentCategory) {
 	
 	var gMenu = document.getElementById('gMenu');
+
+	let catagoriesHtml = function(e) {
+		console.log(e)
+		return `<option value="${e}">${e}</option>`
+	}
+
+	catagories.forEach(catagoriesHtml)
+
+	
 
 	gMenu.innerHTML = `
 		<button onclick="startNewGame()">NEW GAME</button> 
 		<button onclick="gameOver()">SHOW ANSWER</button>
 		<select id="catagory" name="catagory">
-	    	<option value="presidents">PRESIDENTS</option>
-	    	<option value="wars">WARS</option>
-	    	<option value="wars">RIVERS</option>	    	
+	 	${catagoriesHtml}    	
 	  	</select>	
 	`;
 
