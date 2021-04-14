@@ -1,8 +1,8 @@
 
 
 function displayWord(word, visibleLettersInDisplay) {
+		console.log(word)		
 
-	let wordArray = word.split('');
 	var wDisplay = document.getElementById('wDisplay');
 	let wordBlock = '';
 	
@@ -11,7 +11,7 @@ function displayWord(word, visibleLettersInDisplay) {
 		let letter = '';
 
 		if (visibleLettersInDisplay[i]) {
-			letter = wordArray[i]
+			letter = word[i]
 		}
 
 		wordBlock = wordBlock + '<div id="letterBox">'+ letter + '</div>'
@@ -20,7 +20,6 @@ function displayWord(word, visibleLettersInDisplay) {
 	}
 
 	// CSS
-
 	var styles = `
 		#wDisplay {
 			display: flex;

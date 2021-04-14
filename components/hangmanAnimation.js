@@ -1,9 +1,9 @@
 
-function hangmanAnimation() {
+function hangmanAnimation(lives) {
 	var canvas = document.getElementById('hangmanAnimation');
 	var ctx = canvas.getContext("2d");
 
-	draw(0)
+	draw(7 - lives)
 
 	function draw(step) {
 
@@ -42,7 +42,7 @@ function hangmanAnimation() {
 				ctx.stroke();
 			break;
 
-			case 2:
+			case 3:
 				// Body
 				ctx.beginPath();
 				ctx.moveTo(120, 65);
@@ -50,7 +50,7 @@ function hangmanAnimation() {
 				ctx.stroke();
 			break;
 
-			case 3:
+			case 4:
 				// Arm 1
 				ctx.beginPath();
 				ctx.moveTo(120, 75);
@@ -58,7 +58,7 @@ function hangmanAnimation() {
 				ctx.stroke();
 			break;
 
-			case 4:
+			case 5:
 				// Arm 2
 				ctx.beginPath();
 				ctx.moveTo(120, 75);
@@ -66,7 +66,7 @@ function hangmanAnimation() {
 				ctx.stroke();
 			break;
 
-			case 5:
+			case 6:
 				// Leg 1
 				ctx.beginPath();
 				ctx.moveTo(120, 105);
@@ -74,7 +74,7 @@ function hangmanAnimation() {
 				ctx.stroke();
 			break;
 
-			case 6:
+			case 7:
 				// Leg 2
 				ctx.beginPath();
 				ctx.moveTo(120, 105);
