@@ -1,14 +1,16 @@
 
 
-// Words
-const wordList = [ 'baby'];
+const rawWordList = ['baby blues', 'i love', 'humble people'];
+const wordList = sortWordList(rawWordList);
+
 const catagories = ['countries', 'wars', 'rivers']
-const capitalizedWordList = wordList.map( n => n.toUpperCase())
+
 
 // Game settings
 var settings = {
 	lives: 7,
-	catagory: 'Presidents',
+	catagory: 'rivers',
+	difficulty: 1
 }
 
 let chosenKeyboardCharacters = [];
@@ -17,9 +19,12 @@ let currentWord = '';
 
 // *** Start the game ***
 function startNewGame() {
-	
+
+	let randomNumber = Math.floor(Math.random() * wordList.length);
+
 	// Get random word
-	currentWord = capitalizedWordList[Math.floor(Math.random() * capitalizedWordList.length)].split('')
+	currentWord = wordList[randomNumber][0];
+	currentSpace = wordList[randomNumber][1];
 
 	// Reset lives
 	settings.lives = 7
@@ -31,7 +36,7 @@ function startNewGame() {
 	// Reset animation
 	hangmanAnimation(settings.lives)
 	// Reset display
-	displayWord(currentWord, visibleLettersInDisplay);
+	displayWord(currentWord, visibleLettersInDisplay, currentSpace);
 	// Reset keyboard
 	displayKeyboard(chosenKeyboardCharacters)
 	// Reset game menu

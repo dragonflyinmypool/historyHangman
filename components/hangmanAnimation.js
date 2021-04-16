@@ -88,9 +88,7 @@ function hangmanAnimation(lives) {
 	// Your CSS as text
 	var styles = `
 	   
-		#hGraphic {
-			background-color: black;
-		}
+		
 
 	`
 

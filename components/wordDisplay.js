@@ -1,14 +1,20 @@
 
 
-function displayWord(word, visibleLettersInDisplay) {
-		console.log(word)		
+function displayWord(word, visibleLettersInDisplay, currentSpace) {
 
 	var wDisplay = document.getElementById('wDisplay');
 	let wordBlock = '';
+
+
 	
 	for (var i = 0; i < word.length; i++) {
 		
 		let letter = '';
+
+		//Add new line
+		if (i == currentSpace) {
+			
+		}
 
 		if (visibleLettersInDisplay[i]) {
 			letter = word[i]
@@ -26,6 +32,7 @@ function displayWord(word, visibleLettersInDisplay) {
 			justify-content: center;
 			align-items: center;
 			font-size: 25px;
+			color:#006064;
 		}
 	`
 

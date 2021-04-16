@@ -2,9 +2,17 @@ function gameMenu(catagories, currentCategory) {
 	
 	var gMenu = document.getElementById('gMenu');
 
-	let catagoriesHtml = function(e) {
-		console.log(e)
-		return `<option value="${e}">${e}</option>`
+	let htmlContent = '';
+	let selected = '';
+
+	function catagoriesHtml (e) {
+		if (e == currentCategory) {
+			selected = 'selected '
+		} else {
+			selected = ''
+		}
+
+		htmlContent = htmlContent + `<option ${selected} value="${e}">${e.toUpperCase()}</option>`
 	}
 
 	catagories.forEach(catagoriesHtml)
@@ -15,7 +23,7 @@ function gameMenu(catagories, currentCategory) {
 		<button onclick="startNewGame()">NEW GAME</button> 
 		<button onclick="gameOver()">SHOW ANSWER</button>
 		<select id="catagory" name="catagory">
-	 	${catagoriesHtml}    	
+	 	${htmlContent}    	
 	  	</select>	
 	`;
 
@@ -33,7 +41,7 @@ function gameMenu(catagories, currentCategory) {
 			height: 40px;
 			color: #00bd00;
 			outline: none;
-			background: black;
+			background: transparent;
 			margin-right: 2px;
 			margin-left: 12px;
 			border-radius: 8px;			
@@ -41,7 +49,6 @@ function gameMenu(catagories, currentCategory) {
 		}
 		
 		#catagory {
-			background-color:black;
 			color: #00bd00;
 			outline: none;
 			border: 1px solid #00bd00;
