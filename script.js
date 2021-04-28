@@ -1,6 +1,6 @@
 
 // Word list catagory war
-let wordList = ['12345678911', 'MUSKET', 'SWORD']
+let wordList = ['CHAIN', 'MUSKET', 'SWORD']
 let catagories = ['war', 'peoples']
 
 // Game variables
@@ -101,8 +101,11 @@ function checkForWin(){
 // Game won
 function gameWon () {
 	console.log('You won')
-	// Disable all keys
+	// Disable keyboard
 	displayKeyboard('abcdefghijklmnopqrstuvwxyz'.toUpperCase().split(''))
+	// Disable 'show answer' button
+	document.getElementById("showAnswerButton").classList.add('disabledButton');
+
 	playSound(solved)
 }
 
@@ -117,6 +120,10 @@ function gameOver() {
 	for (var i = 0; i < current.correctLettersPicked.length; i++) {
 		current.correctLettersPicked[i] = 1
 	}
+
+	// Disable 'show answer' button
+	document.getElementById("showAnswerButton").classList.add('disabledButton');
+
 
 	// Update components
 	displayKeyboard('abcdefghijklmnopqrstuvwxyz'.toUpperCase().split(''))

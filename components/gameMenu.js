@@ -21,7 +21,7 @@ function gameMenu(catagories, currentCategory) {
 
 	gMenu.innerHTML = `
 		<button onclick="newGame()">NEW GAME</button> 
-		<button onclick="gameOver()">SHOW ANSWER</button>
+		<button id="showAnswerButton" onclick="gameOver()">SHOW ANSWER</button>
 		<select id="catagory" name="catagory">
 	 	${htmlContent}    	
 	  	</select>	
@@ -61,7 +61,7 @@ function gameMenu(catagories, currentCategory) {
 		}
 
 		.disabledButton {
-			color: rgb(100,100,100); 
+			color: rgb(100,100,100) !important; 
 			border: 1px solid rgb(100,100,100) !important;
 		}
 	`
