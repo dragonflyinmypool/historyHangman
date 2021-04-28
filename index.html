@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>History Hangman</title>
+	<meta name='viewport' content='width=device-width, initial-scale=1'>
+
+	<!-- Main style sheet -->
+	<link rel='stylesheet' type='text/css' href='styles.css'>
+
+</head>
+<body>
+
+	<!-- Game -->
+	<div id='content-grid'>
+		<!-- Hangman graphic canvas tag -->
+		<section id='hangmanContainer'><canvas id='hangmanGraphic' width='300px' height='150px'></canvas></section>
+		<!-- Word display -->
+		<section id='wordDisplay'></section>
+		<!-- Letter keyboard -->
+		<section id='letterKeyboard'></section>
+		<!-- Menu -->
+		<section id='gameMenu'></section>
+	</div>
+
+	<!-- IMPORT SOUND LIBRARY -->
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/howler/2.2.1/howler.min.js"></script>
+
+	<!-- IMPORT HELPERS -->
+	<script src='helpers/soundPlayer.js'></script>
+
+ 	<!-- IMPORT COMPONENTS -->
+	<script src='components/hangmanGraphic.js'></script>
+	<script src='components/wordDisplay.js'></script>
+	<script src='components/Keyboard.js'></script>
+	<script src='components/gameMenu.js'></script>
+
+	<!-- Import main script -->
+	<script src='script.js'></script>
+	
+</body>
+</html>
