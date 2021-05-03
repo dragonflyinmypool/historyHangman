@@ -17,12 +17,14 @@ function gameMenu(catagories, currentCategory) {
 
 	catagories.forEach(catagoriesHtml)
 
+
 	
+
 
 	gMenu.innerHTML = `
 		<button onclick="newGame()">NEW GAME</button> 
 		<button id="showAnswerButton" onclick="gameOver()">SHOW ANSWER</button>
-		<select id="catagory" name="catagory">
+		<select id="catagory" name="catagory" onchange="catagorySwitched()">
 	 	${htmlContent}    	
 	  	</select>	
 	`;

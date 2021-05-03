@@ -1,7 +1,10 @@
 
 // Word list catagory war
-let wordList = ['CHAIN', 'MUSKET', 'SWORD']
-let catagories = ['war', 'peoples']
+const wordList = {
+	war: ['CHAIN', 'MUSKET', 'SWORD'],
+	people: ['LINCOLN', 'WASHINGTON','BUSH']
+}
+let catagories = ['war', 'people']
 
 // Game variables
 let current = {}
@@ -9,7 +12,7 @@ current.word = ''
 current.livesLost = 0
 current.correctLettersPicked = [];
 current.chosenLetters = [];
-current.catagory = 'peoples';
+current.catagory = 'people';
 
 
 // NEW GAME AND HELPER FUNCTIONS
@@ -30,8 +33,10 @@ function newGame() {
 }
 function getRandomWord() {
 
-	let randomNumber = Math.floor(Math.random() * wordList.length);
-	let word = wordList[randomNumber];
+	let randomNumber = Math.floor(Math.random() * wordList[current.catagory].length);
+	let word = wordList[current.catagory][randomNumber];
+
+	console.log(randomNumber)
 
 	return word
 }
@@ -131,9 +136,13 @@ function gameOver() {
 	// Start new game after 5 seconds
 }
 
+
 // NEW GAME, SHOW ANSWER
 
-// CHANGE CATAGORY
-
+// OTHER
+// Change catagory button clicked
+function catagorySwitched() {
+		current.catagory = document.getElementById("catagory").value
+	}
 
 newGame();
