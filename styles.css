@@ -2,7 +2,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;500&display=swap');
 
 body {
-	background-color: #006064;
+/*	background-color: #006064;
+*/	
+	background-color: #003b3d;
 	text-align: center;
 	font-family: 'Roboto', sans-serif;
 	font-weight: 500;
